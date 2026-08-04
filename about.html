@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>PAG - About Us | Precision Farm-to-Table Cultivation</title>
+    <title>PAG - Our Process & Mission | Perfect Agro Group</title>
     <link rel="stylesheet" href="about.css" />
 </head>
 <body>
+<!-- Canvas Background for Dynamic Particle Effects -->
+<canvas id="bg-canvas"></canvas>
+
 <!-- Header Navigation -->
 <header class="glass-header">
     <a href="index.html" class="brand-logo">
@@ -22,66 +25,67 @@
         <a href="about.html" class="active">About Us</a>
         <a href="products.html">Products</a>
         <a href="contact.html">Contact</a>
-        <a href="old/about.html" class="legacy-switch-btn" title="Switch to low-power simplified version">Low-Power Version</a>
     </nav>
 </header>
 
 <main class="container">
-    <!-- About Hero Section -->
+    <!-- Hero Header -->
     <section class="about-hero">
-        <span class="badge">Our Agronomy Standard</span>
-        <h1>Sustainable Bio-Tech Excellence</h1>
-        <p>Explore our sterile, climate-controlled, four-stage farm-to-table process ensuring zero contamination, maximum active yield, and optimal nutritional potency.</p>
+        <span class="badge">Precision Cultivation</span>
+        <h1>Farm-to-Table Ecosystem</h1>
+        <p>From cleanroom tissue culture isolation to climate-controlled fruiting chambers, inspect each stage of our zero-waste agricultural lifecycle below.</p>
     </section>
 
-    <!-- Interactive Farm-to-Table Timeline -->
+    <!-- Dynamic Timeline Section -->
     <section class="timeline-section">
-        <h2 class="section-title">Interactive Farm-to-Table Journey</h2>
-        <p class="section-subtitle">Click or hover over any node to inspect our precise bio-farming stages.</p>
+        <h2 class="section-title">The PAG Lifecycle</h2>
+        <p class="section-subtitle">Click or hover on any stage node to inspect operational parameters.</p>
 
         <div class="timeline-wrapper">
+            <!-- Connecting Glowing Track -->
             <div class="timeline-track">
                 <div class="timeline-progress" id="timeline-progress"></div>
             </div>
 
+            <!-- Node Grid -->
             <div class="timeline-nodes">
-                <div class="timeline-node active" data-step="01" data-title="Substrate Matrix Preparation" data-desc="We mix pure organic hardwood sawdust, soybean hulls, and agricultural upcycled minerals to create the dense nutrient foundation required for healthy fungal mycelium.">
+                <div class="timeline-node active" data-step="01" data-title="Cleanroom Genetics Isolation" data-desc="Inoculation of high-potency liquid cultures inside HEPA-filtered laminar flow cleanrooms to eliminate contamination risk.">
                     <div class="node-circle">
                         <span class="node-num">01</span>
                     </div>
-                    <h3>Substrate Mix</h3>
+                    <h3>Genetics</h3>
                 </div>
 
-                <div class="timeline-node" data-step="02" data-title="Clean-Room Inoculation" data-desc="In HEPA-filtered laminar flow clean rooms, high-potency liquid cultures are injected into fully pressure-sterilized substrate blocks under zero-contamination parameters.">
+                <div class="timeline-node" data-step="02" data-title="Sterilized Substrate Formulation" data-desc="Hardwood sawdust and grain matrices autoclaved at 15 PSI for 150 minutes, ensuring nutrient-dense bio-availability.">
                     <div class="node-circle">
                         <span class="node-num">02</span>
                     </div>
-                    <h3>Inoculation</h3>
+                    <h3>Substrate</h3>
                 </div>
 
-                <div class="timeline-node" data-step="03" data-title="Climate-Controlled Incubation" data-desc="Inoculated blocks mature inside dark, temperature-balanced micro-climates. Automated sensors maintain ideal relative humidity and CO2 ratios for rapid colonisation.">
+                <div class="timeline-node" data-step="03" data-title="Controlled Fruiting Environment" data-desc="Automated climate regulation maintaining 95% relative humidity and optimal carbon dioxide exchange for dense canopy growth.">
                     <div class="node-circle">
                         <span class="node-num">03</span>
                     </div>
-                    <h3>Mycelium Run</h3>
+                    <h3>Fruiting</h3>
                 </div>
 
-                <div class="timeline-node" data-step="04" data-title="Precision Fruiting & Harvest" data-desc="Initiated by precise lighting and fresh air exchanges, fruiting bodies emerge. Skilled agronomists hand-harvest yields at peak spore maturity before cold-chain packing.">
+                <div class="timeline-node" data-step="04" data-title="Cold-Chain Harvest & Distribution" data-desc="Hand-harvested at peak maturity, rapidly chilled to 2°C, and distributed via temperature-controlled supply lines within 24 hours.">
                     <div class="node-circle">
                         <span class="node-num">04</span>
                     </div>
-                    <h3>Gourmet Harvest</h3>
+                    <h3>Harvest</h3>
                 </div>
             </div>
         </div>
 
-        <!-- Dynamic Stage Inspector Display Card -->
-        <div id="timeline-inspector" class="inspector-card glass-card">
+        <!-- Stage Inspector Display Card -->
+        <div class="inspector-card glass-card" id="timeline-inspector">
             <div class="inspector-header">
                 <span class="inspector-badge" id="inspector-step">STAGE 01</span>
-                <h3 id="inspector-title">Substrate Matrix Preparation</h3>
+                <h3 id="inspector-title">Cleanroom Genetics Isolation</h3>
             </div>
-            <p id="inspector-desc">We mix pure organic hardwood sawdust, soybean hulls, and agricultural upcycled minerals to create the dense nutrient foundation required for healthy fungal mycelium.</p>
+            <p id="inspector-desc">Inoculation of high-potency liquid cultures inside HEPA-filtered laminar flow cleanrooms to eliminate contamination risk.</p>
         </div>
     </section>
 </main>
