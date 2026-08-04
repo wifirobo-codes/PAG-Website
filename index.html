@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>PAG - Perfect Agro Group</title>
+    <title>PAG - Perfect Agro Group | Premium Mushroom Farming</title>
     <link rel="stylesheet" href="index.css" />
 </head>
 <body>
 <!-- Dynamic Organic Canvas Background -->
 <canvas id="bg-canvas"></canvas>
 
-<!-- Header Navigation -->
+<!-- Sticky Glassmorphism Navigation Header -->
 <header class="glass-header">
     <a href="index.html" class="brand-logo">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -28,23 +28,38 @@
     </nav>
 </header>
 
-<main class="container">
+<main>
+    <!-- Hero Section with Parallax Background Accent -->
     <section class="hero-section">
-        <span class="badge">Next-Gen Agronomy</span>
-        <h1>Cultivating the Future of Sustainable Bio-Yields</h1>
-        <p>Perfect Agro Group combines precision biotechnology, organic mushroom cultivation, and lab-grade substrate engineering to empower global agricultural supply chains.</p>
+        <div class="hero-content">
+            <div class="badge">Pure Organic Bio-Cultivation</div>
+            <h1>Pioneering Precision Mushroom Agronomy</h1>
+            <p>Harnessing sustainable biotechnology to yield gourmet, medicinal, and ultra-pure fungal varieties for global markets.</p>
+            <div class="cta-group">
+                <a href="products.html" class="glow-btn">Explore Varieties</a>
+                <a href="about.html" class="glass-btn">Our Process</a>
+            </div>
+        </div>
+    </section>
 
-        <div class="hero-actions">
-            <a href="products.html" class="glow-btn">
-                <span>Explore Products</span>
-            </a>
-            <a href="about.html" class="secondary-btn">
-                <span>Our Process</span>
-            </a>
+    <!-- Dynamic Stats Counter Section -->
+    <section class="stats-section glass-card">
+        <div class="stat-item">
+            <div class="stat-number"><span class="counter" data-target="1500">0</span>+</div>
+            <p class="stat-label">Tons Harvested / Year</p>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number"><span class="counter" data-target="99">0</span>%</div>
+            <p class="stat-label">Zero-Waste Energy Ratio</p>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number"><span class="counter" data-target="42">0</span></div>
+            <p class="stat-label">Gourmet & Medicinal Strains</p>
         </div>
     </section>
 </main>
 
+<!-- Unique External JavaScript File -->
 <script src="index.js"></script>
 </body>
 </html>
