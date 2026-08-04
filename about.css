@@ -1,0 +1,262 @@
+@import url('index.css');
+
+/* Main Page Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 6% 6rem;
+}
+
+/* About Hero Section */
+.about-hero {
+    text-align: center;
+    max-width: 750px;
+    margin: 1rem auto 4rem;
+}
+
+.about-hero h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin: 1rem 0;
+    background: linear-gradient(135deg, #ffffff 30%, var(--accent-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-hero p {
+    font-size: 1.15rem;
+    color: var(--sage-text);
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+/* Timeline Section Layout */
+.timeline-section {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--text-bright);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--sage-text);
+    font-size: 0.95rem;
+    margin-bottom: 4rem;
+}
+
+.timeline-wrapper {
+    position: relative;
+    margin: 0 1rem 3rem;
+    padding: 1rem 0;
+}
+
+/* Glowing Connecting Track */
+.timeline-track {
+    position: absolute;
+    top: 45px;
+    left: 5%;
+    width: 90%;
+    height: 4px;
+    background: rgba(224, 169, 109, 0.15);
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.timeline-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--emerald-light), var(--accent-gold));
+    box-shadow: 0 0 12px var(--accent-gold-glow);
+    border-radius: 4px;
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Interactive Timeline Node Grid */
+.timeline-nodes {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 22%;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.timeline-node:hover {
+    transform: translateY(-5px);
+}
+
+.node-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--earth-deep);
+    border: 2px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.node-num {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--sage-text);
+    transition: color 0.3s ease;
+}
+
+.timeline-node h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--sage-text);
+    transition: color 0.3s ease;
+}
+
+/* Active Node States */
+.timeline-node.active .node-circle {
+    background: var(--emerald-dark);
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 25px var(--accent-gold-glow);
+    transform: scale(1.15);
+}
+
+.timeline-node.active .node-num {
+    color: var(--accent-gold);
+}
+
+.timeline-node.active h3 {
+    color: var(--text-bright);
+}
+
+/* Stage Inspector Display Card */
+.inspector-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 2.5rem;
+    border-radius: 20px;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.inspector-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent-gold);
+    box-shadow: 0 0 10px var(--accent-gold);
+}
+
+.inspector-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.inspector-badge {
+    background: var(--emerald-dark);
+    color: var(--accent-gold);
+    border: 1px solid var(--glass-border);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.inspector-header h3 {
+    font-size: 1.6rem;
+    color: var(--text-bright);
+    font-weight: 700;
+}
+
+.inspector-card p {
+    font-size: 1.1rem;
+    color: var(--sage-text);
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* Responsive Scaling */
+@media (max-width: 868px) {
+    .about-hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .timeline-wrapper {
+        margin: 0 0 2.5rem;
+    }
+
+    .timeline-track {
+        top: 0;
+        left: 28px;
+        width: 4px;
+        height: 100%;
+    }
+
+    .timeline-progress {
+        width: 100% !important;
+        height: 0%;
+        background: linear-gradient(180deg, var(--emerald-light), var(--accent-gold));
+    }
+
+    .timeline-nodes {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .timeline-node {
+        flex-direction: row;
+        width: 100%;
+        text-align: left;
+        gap: 1.5rem;
+    }
+
+    .node-circle {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        margin-bottom: 0;
+    }
+
+    .inspector-card {
+        padding: 1.8rem;
+    }
+
+    .inspector-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .inspector-header h3 {
+        font-size: 1.3rem;
+    }
+}

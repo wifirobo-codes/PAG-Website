@@ -1,10 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>PAG - About Us | Precision Farm-to-Table Cultivation</title>
+    <link rel="stylesheet" href="about.css" />
 </head>
 <body>
+<!-- Header Navigation -->
+<header class="glass-header">
+    <a href="index.html" class="brand-logo">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path class="animated-path" d="M12 2C7.03 2 3 6.03 3 11c0 2.5 1.03 4.76 2.7 6.39L5 22h14l-.7-4.61C19.97 15.76 21 13.5 21 11c0-4.97-4.03-9-9-9z"/>
+            <path d="M12 11v11"/>
+        </svg>
+        <span>PAG</span>
+    </a>
 
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+        <a href="old/about.html" class="legacy-switch-btn" title="Switch to low-power simplified version">Low-Power Version</a>
+    </nav>
+</header>
+
+<main class="container">
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <span class="badge">Our Agronomy Standard</span>
+        <h1>Sustainable Bio-Tech Excellence</h1>
+        <p>Explore our sterile, climate-controlled, four-stage farm-to-table process ensuring zero contamination, maximum active yield, and optimal nutritional potency.</p>
+    </section>
+
+    <!-- Interactive Farm-to-Table Timeline -->
+    <section class="timeline-section">
+        <h2 class="section-title">Interactive Farm-to-Table Journey</h2>
+        <p class="section-subtitle">Click or hover over any node to inspect our precise bio-farming stages.</p>
+
+        <div class="timeline-wrapper">
+            <div class="timeline-track">
+                <div class="timeline-progress" id="timeline-progress"></div>
+            </div>
+
+            <div class="timeline-nodes">
+                <div class="timeline-node active" data-step="01" data-title="Substrate Matrix Preparation" data-desc="We mix pure organic hardwood sawdust, soybean hulls, and agricultural upcycled minerals to create the dense nutrient foundation required for healthy fungal mycelium.">
+                    <div class="node-circle">
+                        <span class="node-num">01</span>
+                    </div>
+                    <h3>Substrate Mix</h3>
+                </div>
+
+                <div class="timeline-node" data-step="02" data-title="Clean-Room Inoculation" data-desc="In HEPA-filtered laminar flow clean rooms, high-potency liquid cultures are injected into fully pressure-sterilized substrate blocks under zero-contamination parameters.">
+                    <div class="node-circle">
+                        <span class="node-num">02</span>
+                    </div>
+                    <h3>Inoculation</h3>
+                </div>
+
+                <div class="timeline-node" data-step="03" data-title="Climate-Controlled Incubation" data-desc="Inoculated blocks mature inside dark, temperature-balanced micro-climates. Automated sensors maintain ideal relative humidity and CO2 ratios for rapid colonisation.">
+                    <div class="node-circle">
+                        <span class="node-num">03</span>
+                    </div>
+                    <h3>Mycelium Run</h3>
+                </div>
+
+                <div class="timeline-node" data-step="04" data-title="Precision Fruiting & Harvest" data-desc="Initiated by precise lighting and fresh air exchanges, fruiting bodies emerge. Skilled agronomists hand-harvest yields at peak spore maturity before cold-chain packing.">
+                    <div class="node-circle">
+                        <span class="node-num">04</span>
+                    </div>
+                    <h3>Gourmet Harvest</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dynamic Stage Inspector Display Card -->
+        <div id="timeline-inspector" class="inspector-card glass-card">
+            <div class="inspector-header">
+                <span class="inspector-badge" id="inspector-step">STAGE 01</span>
+                <h3 id="inspector-title">Substrate Matrix Preparation</h3>
+            </div>
+            <p id="inspector-desc">We mix pure organic hardwood sawdust, soybean hulls, and agricultural upcycled minerals to create the dense nutrient foundation required for healthy fungal mycelium.</p>
+        </div>
+    </section>
+</main>
+
+<script src="about.js"></script>
 </body>
 </html>
