@@ -1,65 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PAG - Perfect Agro Group | Premium Mushroom Farming</title>
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="index.css">
 </head>
-<body>
-<!-- Dynamic Organic Canvas Background -->
-<canvas id="bg-canvas"></canvas>
 
-<!-- Sticky Glassmorphism Navigation Header -->
+<body>
+
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+
 <header class="glass-header">
-    <a href="index.html" class="brand-logo">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path class="animated-path" d="M12 2C7.03 2 3 6.03 3 11c0 2.5 1.03 4.76 2.7 6.39L5 22h14l-.7-4.61C19.97 15.76 21 13.5 21 11c0-4.97-4.03-9-9-9z"/>
+
+    <a href="index.html" class="brand-logo" aria-label="PAG Home">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor"
+             stroke-width="2"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             aria-hidden="true">
+
+            <path class="animated-path"
+                  d="M12 2C7.03 2 3 6.03 3 11c0 2.5 1.03 4.76 2.7 6.39L5 22h14l-.7-4.61C19.97 15.76 21 13.5 21 11c0-4.97-4.03-9-9-9z"/>
+
             <path d="M12 11v11"/>
         </svg>
+
         <span>PAG</span>
     </a>
 
-    <nav class="nav-links">
+    <button
+        class="mobile-menu-btn"
+        id="mobile-menu-btn"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="main-navigation">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+    <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
+
         <a href="index.html" class="active">Home</a>
         <a href="about.html">About Us</a>
         <a href="contact.html">Contact</a>
+
     </nav>
+
 </header>
 
 <main>
-    <!-- Hero Section with Parallax Background Accent -->
+
     <section class="hero-section">
+
         <div class="hero-content">
-            <div class="badge">Pure Organic Bio-Cultivation</div>
-            <h1>Pioneering Precision Mushroom Agronomy</h1>
-            <p>Providing with fresh and best quality mushrooms, directly from the farms</p>
-            <div class="cta-group">
-                <a href="contact.html" class="glow-btn">Contact Us</a>
-                <a href="about.html" class="glass-btn">Our Process</a>
+
+            <div class="badge">
+                Fresh Mushroom Cultivation
             </div>
+
+            <h1>
+                Pioneering Precision Mushroom Agronomy
+            </h1>
+
+            <p>
+                Providing fresh, high-quality mushrooms directly from our farms.
+            </p>
+
+            <div class="cta-group">
+
+                <a href="contact.html" class="glow-btn">
+                    Contact Us
+                </a>
+
+                <a href="about.html" class="glass-btn">
+                    Our Process
+                </a>
+
+            </div>
+
         </div>
+
     </section>
 
-    <!-- Dynamic Stats Counter Section -->
-<section class="stats-section glass-card">
-    <div class="stat-item">
-        <div class="stat-number"><span class="counter" data-target="12">0</span> Tons</div>
-        <p class="stat-label">Harvested / Year</p>
-    </div>
-    <div class="stat-item">
-        <div class="stat-number"><span class="counter" data-target="3">0</span>% approx.</div>
-        <p class="stat-label">Waste percentage</p>
-    </div>
-    <div class="stat-item">
-        <div class="stat-number">₹<span class="counter" data-target="160">0</span>/kg</div>
-        <p class="stat-label">Rate of mushrooms</p>
-    </div>
-</section>
+    <section class="stats-section" aria-label="PAG statistics">
+
+        <div class="stat-item">
+
+            <div class="stat-number">
+                <span class="counter" data-target="12">12</span> Tons
+            </div>
+
+            <p class="stat-label">
+                Harvested / Year
+            </p>
+
+        </div>
+
+        <div class="stat-item">
+
+            <div class="stat-number">
+                <span class="counter" data-target="3">3</span>%
+            </div>
+
+            <p class="stat-label">
+                Approximate Waste
+            </p>
+
+        </div>
+
+        <div class="stat-item">
+
+            <div class="stat-number">
+                ₹<span class="counter" data-target="160">160</span>/kg
+            </div>
+
+            <p class="stat-label">
+                Approximate Mushroom Rate
+            </p>
+
+        </div>
+
+    </section>
 
 </main>
 
-<!-- Unique External JavaScript File -->
 <script src="index.js"></script>
+
 </body>
 </html>
