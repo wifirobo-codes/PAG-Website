@@ -1,94 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PAG - Our Process & Mission | Perfect Agro Group</title>
-    <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="about.css">
 </head>
-<body>
-<!-- Canvas Background for Dynamic Particle Effects -->
-<canvas id="bg-canvas"></canvas>
 
-<!-- Header Navigation -->
+<body>
+
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+
 <header class="glass-header">
-    <a href="index.html" class="brand-logo">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path class="animated-path" d="M12 2C7.03 2 3 6.03 3 11c0 2.5 1.03 4.76 2.7 6.39L5 22h14l-.7-4.61C19.97 15.76 21 13.5 21 11c0-4.97-4.03-9-9-9z"/>
+
+    <a href="index.html" class="brand-logo" aria-label="PAG Home">
+
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor"
+             stroke-width="2"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             aria-hidden="true">
+
+            <path class="animated-path"
+                  d="M12 2C7.03 2 3 6.03 3 11c0 2.5 1.03 4.76 2.7 6.39L5 22h14l-.7-4.61C19.97 15.76 21 13.5 21 11c0-4.97-4.03-9-9-9z"/>
+
             <path d="M12 11v11"/>
+
         </svg>
+
         <span>PAG</span>
+
     </a>
 
-    <nav class="nav-links">
+    <button
+        class="mobile-menu-btn"
+        id="mobile-menu-btn"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="main-navigation">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+    <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
+
         <a href="index.html">Home</a>
-        <a href="about.html" class="active">About Us</a>
-        <a href="contact.html">Contact</a>
+
+        <a href="about.html" class="active">
+            About Us
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
     </nav>
+
 </header>
 
 <main class="container">
-    <!-- Hero Header -->
+
     <section class="about-hero">
-        <span class="badge">Precision Cultivation</span>
-        <h1>Farm-to-Table Ecosystem</h1>
-        <p>From a fresh and organic farm where the best mushroom rise, to your table as a delicious meal such as butter garlic mushroom.</p>
+
+        <span class="badge">
+            Precision Cultivation
+        </span>
+
+        <h1>
+            Farm-to-Table Ecosystem
+        </h1>
+
+        <p>
+            From our farm to your table, PAG focuses on producing
+            fresh and quality mushrooms suitable for delicious meals.
+        </p>
+
     </section>
 
-    <!-- Dynamic Timeline Section -->
     <section class="timeline-section">
-        <h2 class="section-title">The PAG Lifecycle</h2>
-        <p class="section-subtitle">Click or hover on any stage node to inspect operational parameters.</p>
+
+        <h2 class="section-title">
+            The PAG Lifecycle
+        </h2>
+
+        <p class="section-subtitle">
+            Select any stage to learn more about the cultivation process.
+        </p>
 
         <div class="timeline-wrapper">
-            <!-- Connecting Glowing Track -->
-            <div class="timeline-track">
-                <div class="timeline-progress" id="timeline-progress"></div>
+
+            <div class="timeline-track" aria-hidden="true">
+                <div
+                    class="timeline-progress"
+                    id="timeline-progress">
+                </div>
             </div>
 
-            <!-- Node Grid -->
             <div class="timeline-nodes">
-                <div class="timeline-node active" data-step="01" data-title="Cleanroom Genetics Isolation" data-desc="Inoculation of high-potency liquid cultures inside HEPA-filtered laminar flow cleanrooms to eliminate contamination risk.">
-                    <div class="node-circle">
+
+                <button
+                    class="timeline-node active"
+                    type="button"
+                    data-step="01"
+                    data-title="Genetics"
+                    data-desc="Carefully selected mushroom cultures are prepared for cultivation.">
+
+                    <span class="node-circle">
                         <span class="node-num">01</span>
-                    </div>
-                    <h3>Genetics</h3>
-                </div>
+                    </span>
 
-                <div class="timeline-node" data-step="02" data-title="Sterilized Substrate Formulation" data-desc="Mixing a carbon base, nitrogen supplements, and water, then heating it under pressure to kill all competing organisms">
-                    <div class="node-circle">
+                    <span class="node-label">
+                        Genetics
+                    </span>
+
+                </button>
+
+                <button
+                    class="timeline-node"
+                    type="button"
+                    data-step="02"
+                    data-title="Substrate"
+                    data-desc="The growing substrate is prepared and treated to create suitable conditions for mushroom growth.">
+
+                    <span class="node-circle">
                         <span class="node-num">02</span>
-                    </div>
-                    <h3>Substrate</h3>
-                </div>
+                    </span>
 
-                <div class="timeline-node" data-step="03" data-title="Controlled Fruiting Environment" data-desc="Automated climate regulation maintaining 95% relative humidity and optimal carbon dioxide exchange for dense canopy growth.">
-                    <div class="node-circle">
+                    <span class="node-label">
+                        Substrate
+                    </span>
+
+                </button>
+
+                <button
+                    class="timeline-node"
+                    type="button"
+                    data-step="03"
+                    data-title="Fruiting"
+                    data-desc="The growing environment is managed to support healthy mushroom development and consistent quality.">
+
+                    <span class="node-circle">
                         <span class="node-num">03</span>
-                    </div>
-                    <h3>Fruiting</h3>
-                </div>
+                    </span>
 
-                <div class="timeline-node" data-step="04" data-title="Cold-Chain Harvest & Distribution" data-desc="Hand-harvested at peak maturity, rapidly chilled to 2°C, and distributed via temperature-controlled supply lines within 24 hours.">
-                    <div class="node-circle">
+                    <span class="node-label">
+                        Fruiting
+                    </span>
+
+                </button>
+
+                <button
+                    class="timeline-node"
+                    type="button"
+                    data-step="04"
+                    data-title="Harvest"
+                    data-desc="Mushrooms are harvested at the appropriate stage and handled carefully before reaching customers.">
+
+                    <span class="node-circle">
                         <span class="node-num">04</span>
-                    </div>
-                    <h3>Harvest</h3>
-                </div>
+                    </span>
+
+                    <span class="node-label">
+                        Harvest
+                    </span>
+
+                </button>
+
             </div>
+
         </div>
 
-        <!-- Stage Inspector Display Card -->
-        <div class="inspector-card glass-card" id="timeline-inspector">
+        <div
+            class="inspector-card"
+            id="timeline-inspector">
+
             <div class="inspector-header">
-                <span class="inspector-badge" id="inspector-step">STAGE 01</span>
-                <h3 id="inspector-title">Cleanroom Genetics Isolation</h3>
+
+                <span
+                    class="inspector-badge"
+                    id="inspector-step">
+                    STAGE 01
+                </span>
+
+                <h3 id="inspector-title">
+                    Genetics
+                </h3>
+
             </div>
-            <p id="inspector-desc">Inoculation of high-potency liquid cultures inside HEPA-filtered laminar flow cleanrooms to eliminate contamination risk.</p>
+
+            <p id="inspector-desc">
+                Carefully selected mushroom cultures are prepared
+                for cultivation.
+            </p>
+
         </div>
+
     </section>
+
 </main>
 
 <script src="about.js"></script>
+
 </body>
 </html>
