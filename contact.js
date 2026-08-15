@@ -84,9 +84,7 @@ function initFaqAccordion() {
                 );
 
             const isOpen =
-                currentItem.classList.contains(
-                    'active'
-                );
+                currentItem.classList.contains('active');
 
             document
                 .querySelectorAll('.accordion-item')
@@ -95,38 +93,27 @@ function initFaqAccordion() {
                     item.classList.remove('active');
 
                     const itemHeader =
-                        item.querySelector(
-                            '.accordion-header'
-                        );
+                        item.querySelector('.accordion-header');
 
                     const itemBody =
-                        item.querySelector(
-                            '.accordion-body'
-                        );
+                        item.querySelector('.accordion-body');
 
                     if (itemHeader) {
-
                         itemHeader.setAttribute(
                             'aria-expanded',
                             'false'
                         );
-
                     }
 
                     if (itemBody) {
-
-                        itemBody.style.maxHeight =
-                            null;
-
+                        itemBody.style.maxHeight = null;
                     }
 
                 });
 
             if (!isOpen && body) {
 
-                currentItem.classList.add(
-                    'active'
-                );
+                currentItem.classList.add('active');
 
                 header.setAttribute(
                     'aria-expanded',
