@@ -135,14 +135,12 @@
     font-size: 1.1rem;
     font-weight: 800;
     color: var(--sage-text);
-    transition: color 0.3s ease;
 }
 
 .node-label {
     font-size: 1.05rem;
     font-weight: 600;
     color: var(--sage-text);
-    transition: color 0.3s ease;
 }
 
 .timeline-node.active .node-circle {
@@ -168,7 +166,6 @@
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    transition: opacity 0.2s ease, transform 0.2s ease;
     position: relative;
     overflow: hidden;
 }
@@ -205,7 +202,6 @@
 .inspector-header h3 {
     font-size: 1.6rem;
     color: var(--text-bright);
-    font-weight: 700;
 }
 
 .inspector-card p {
@@ -294,17 +290,6 @@
 
     .section-subtitle {
         margin-bottom: 2.5rem;
-    }
-
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-    .timeline-node,
-    .node-circle,
-    .timeline-progress,
-    .inspector-card {
-        transition: none;
     }
 
 }
