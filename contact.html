@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>PAG - Contact & Inquiries | Perfect Agro Group</title>
-    <link rel="stylesheet" href="contact.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAG - Contact | Perfect Agro Group</title>
+    <link rel="stylesheet" href="contact.css">
 </head>
+
 <body>
-<!-- Dynamic Organic Canvas Background -->
+
 <canvas id="bg-canvas"></canvas>
 
-<!-- Header Navigation -->
 <header class="glass-header">
-    <a href="index.html" class="brand-logo">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path class="animated-path" d="M12 2C7.03 2 3 6.03 3 11c0 2.5 1.03 4.76 2.7 6.39L5 22h14l-.7-4.61C19.97 15.76 21 13.5 21 11c0-4.97-4.03-9-9-9z"/>
+    <a href="index.html" class="brand-logo" aria-label="PAG Home">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true">
+
+            <path class="animated-path"
+                  d="M12 2C7.03 2 3 6.03 3 11c0 2.5 1.03 4.76 2.7 6.39L5 22h14l-.7-4.61C19.97 15.76 21 13.5 21 11c0-4.97-4.03-9-9-9z"/>
+
             <path d="M12 11v11"/>
         </svg>
+
         <span>PAG</span>
     </a>
 
-    <nav class="nav-links">
+    <button class="mobile-menu-btn"
+            id="mobile-menu-btn"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="main-navigation">
+
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="nav-links" id="main-navigation">
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="contact.html" class="active">Contact</a>
@@ -28,79 +46,222 @@
 </header>
 
 <main class="container">
+
     <section class="contact-hero">
-        <span class="badge">Direct Farm Logistics</span>
-        <h1>Connect With Our Agronomy Team</h1>
-        <p>Whether you require commercial wholesale orders, laboratory substrate bags, or custom bio-extract distribution, send us an inquiry below.</p>
+        <span class="badge">Get In Touch</span>
+
+        <h1>Connect With PAG</h1>
+
+        <p>
+            For product inquiries, business opportunities, or any other
+            questions, contact the PAG team directly using the details below.
+        </p>
     </section>
 
     <section class="contact-grid">
-        <!-- Contact Form Container -->
+
         <div class="form-card glass-card">
-            <h2>Contact us at : </h2>
-            <h3>Mobile :<br>+91 9898004281<br>+91 9873333512<br></h3>
-            <h3>Address :<br>107 Paiki, At. Nesvad, Nr. Shree Ram Food Industries, Mahuva - 364290. Dist. Bhavnagar</h3>
+
+            <h2>Contact Us</h2>
+
+            <h3>Mobile</h3>
+
+            <p>
+                <a href="tel:+919898004281">
+                    +91 9898004281
+                </a>
+            </p>
+
+            <p>
+                <a href="tel:+919873333512">
+                    +91 9873333512
+                </a>
+            </p>
+
+            <h3>Address</h3>
+
+            <p>
+                107 Paiki, At. Nesvad,<br>
+                Near Shree Ram Food Industries,<br>
+                Mahuva - 364290,<br>
+                District Bhavnagar, Gujarat, India.
+            </p>
+
+            <a
+                class="map-link"
+                href="https://www.google.com/maps/search/?api=1&query=107+Paiki+At+Nesvad+Mahuva+364290+Bhavnagar+Gujarat"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Open Address in Google Maps
+            </a>
 
         </div>
 
-        <!-- FAQ Accordion Container -->
         <div class="faq-container">
+
             <h2>Frequently Asked Questions</h2>
-            <p class="faq-sub">Common inquiries regarding supply chain, storage, and fulfillment.</p>
+
+            <p class="faq-sub">
+                Common questions about PAG and our products.
+            </p>
 
             <div class="accordion">
+
                 <div class="accordion-item">
-                    <button class="accordion-header" aria-expanded="false">
-                        <span>About the company PAG</span>
-                        <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                    <button class="accordion-header"
+                            aria-expanded="false">
+
+                        <span>About PAG</span>
+
+                        <svg class="accordion-icon"
+                             width="20"
+                             height="20"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             aria-hidden="true">
+
                             <polyline points="6 9 12 15 18 9"></polyline>
+
                         </svg>
+
                     </button>
+
                     <div class="accordion-body">
-                        <p>PAG, Perfect Agro Group was founded in 2025 by its founder, Promila Jain and Altab Badami (renouned industrialist). The comapny is registered in Gujarat, India. Future plans for this company are based on innovations in the field of agriculture</p>
+
+                        <p>
+                            PAG, or Perfect Agro Group, was founded in 2025
+                            by Promila Jain and Altab Badami, a renowned
+                            industrialist. The company is registered in
+                            Gujarat, India, with future plans focused on
+                            innovation in agriculture.
+                        </p>
+
                     </div>
+
                 </div>
 
                 <div class="accordion-item">
-                    <button class="accordion-header" aria-expanded="false">
-                        <span>Are the button mushrooms vegetarian or non-vegetarian?</span>
-                        <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                    <button class="accordion-header"
+                            aria-expanded="false">
+
+                        <span>
+                            Are button mushrooms vegetarian or non-vegetarian?
+                        </span>
+
+                        <svg class="accordion-icon"
+                             width="20"
+                             height="20"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             aria-hidden="true">
+
                             <polyline points="6 9 12 15 18 9"></polyline>
+
                         </svg>
+
                     </button>
+
                     <div class="accordion-body">
-                        <p>The button mushrooms are purely vegetarian, food. They are also highly protein enriched and also contain rich vitamins and calcium</p>
+
+                        <p>
+                            Button mushrooms are considered vegetarian food.
+                            They are a nutritious food containing protein,
+                            vitamins, minerals, and other nutrients.
+                        </p>
+
                     </div>
+
                 </div>
 
                 <div class="accordion-item">
-                    <button class="accordion-header" aria-expanded="false">
-                        <span>Are PAG mushrooms organic?</span>
-                        <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                    <button class="accordion-header"
+                            aria-expanded="false">
+
+                        <span>
+                            Are PAG mushrooms organic?
+                        </span>
+
+                        <svg class="accordion-icon"
+                             width="20"
+                             height="20"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             aria-hidden="true">
+
                             <polyline points="6 9 12 15 18 9"></polyline>
+
                         </svg>
+
                     </button>
+
                     <div class="accordion-body">
-                        <p>The PAG mushrooms are organic, fresh and supplied immediately after harvest. As we are supplying fresh and fine button mushrooms, the mushrooms do not contain any chemicals. The quality of button mushrooms itself speak that they are not cleaned with chemicals/are not induced with chemicals.</p>
+
+                        <p>
+                            PAG aims to provide fresh and carefully cultivated
+                            mushrooms. Our mushrooms are supplied soon after
+                            harvesting to maintain their freshness and quality.
+                        </p>
+
                     </div>
+
                 </div>
 
                 <div class="accordion-item">
-                    <button class="accordion-header" aria-expanded="false">
-                        <span>Can PAG's button mushrooms be relied on?</span>
-                        <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                    <button class="accordion-header"
+                            aria-expanded="false">
+
+                        <span>
+                            Can PAG button mushrooms be relied upon?
+                        </span>
+
+                        <svg class="accordion-icon"
+                             width="20"
+                             height="20"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             aria-hidden="true">
+
                             <polyline points="6 9 12 15 18 9"></polyline>
+
                         </svg>
+
                     </button>
+
                     <div class="accordion-body">
-                        <p>Yes the mushroom can be relied on as they are supplied directly from our farm just after the harvest.</p>
+
+                        <p>
+                            PAG focuses on providing fresh mushrooms with
+                            careful handling and quality control. For product
+                            availability and specific requirements, please
+                            contact us directly.
+                        </p>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
 </main>
 
 <script src="contact.js"></script>
+
 </body>
 </html>
