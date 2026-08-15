@@ -67,7 +67,6 @@
     color: var(--text-bright);
     font-weight: 700;
     margin-bottom: 2rem;
-    letter-spacing: -0.5px;
 }
 
 .contact-section {
@@ -154,9 +153,6 @@
     overflow: hidden;
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
-    transition:
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
 }
 
 .accordion-item:hover {
@@ -182,7 +178,6 @@
     align-items: center;
     cursor: pointer;
     gap: 1rem;
-    transition: color 0.3s ease;
 }
 
 .accordion-header:hover {
@@ -207,9 +202,7 @@
 .accordion-body {
     max-height: 0;
     overflow: hidden;
-    transition:
-        max-height 0.4s ease,
-        padding 0.3s ease;
+    transition: max-height 0.4s ease;
     padding: 0 1.6rem;
     background: rgba(13, 19, 14, 0.3);
 }
@@ -240,10 +233,6 @@
         padding: 2.5rem 5% 4rem;
     }
 
-    .contact-hero {
-        margin-bottom: 3rem;
-    }
-
     .contact-hero h1 {
         font-size: 2.4rem;
     }
@@ -271,17 +260,6 @@
 
     .map-link {
         width: 100%;
-    }
-
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-    .accordion-item,
-    .accordion-icon,
-    .map-link,
-    .contact-link {
-        transition: none;
     }
 
 }
