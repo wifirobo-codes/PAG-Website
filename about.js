@@ -1,112 +1,273 @@
-/**
- * PAG (Perfect Agro Group) - About Us Page Interactive Logic
- * File: about.js
- */
-
 document.addEventListener('DOMContentLoaded', () => {
-    const nodes = document.querySelectorAll('.timeline-node');
-    const progressBar = document.getElementById('timeline-progress');
-    const inspectorStep = document.getElementById('inspector-step');
-    const inspectorTitle = document.getElementById('inspector-title');
-    const inspectorDesc = document.getElementById('inspector-desc');
-    const inspectorCard = id('timeline-inspector');
 
-    function id(elementId) {
-        return document.getElementById(elementId);
+    initMobileMenu();
+    initTimeline();
+
+});
+
+function initMobileMenu() {
+
+    const menuButton =
+        document.getElementById('mobile-menu-btn');
+
+    const navigation =
+        document.getElementById('main-navigation');
+
+    if (!menuButton || !navigation) {
+        return;
     }
 
-    // Calculate and update connecting track progress percentage
+    menuButton.addEventListener('click', () => {
+
+        const isOpen =
+            menuButton.classList.toggle('active');
+
+        navigation.classList.toggle(
+            'active',
+            isOpen
+        );
+
+        menuButton.setAttribute(
+            'aria-expanded',
+            String(isOpen)
+        );
+
+        menuButton.setAttribute(
+            'aria-label',
+            isOpen
+                ? 'Close navigation menu'
+                : 'Open navigation menu'
+        );
+
+    });
+
+    navigation.querySelectorAll('a').forEach((link) => {
+
+        link.addEventListener('click', () => {
+
+            menuButton.classList.remove('active');
+            navigation.classList.remove('active');
+
+            menuButton.setAttribute(
+                'aria-expanded',
+                'false'
+            );
+
+            menuButton.setAttribute(
+                'aria-label',
+                'Open navigation menu'
+            );
+
+        });
+
+    });
+
+}
+
+function initTimeline() {
+
+    const nodes =
+        document.querySelectorAll('.timeline-node');
+
+    const progressBar =
+        document.getElementById('timeline-progress');
+
+    const inspectorStep =
+        document.getElementById('inspector-step');
+
+    const inspectorTitle =
+        document.getElementById('inspector-title');
+
+    const inspectorDesc =
+        document.getElementById('inspector-desc');
+
+    const inspectorCard =
+        document.getElementById('timeline-inspector');
+
+    if (
+        nodes.length === 0 ||
+        !progressBar ||
+        !inspectorStep ||
+        !inspectorTitle ||
+        !inspectorDesc
+    ) {
+        return;
+    }
+
+    function isMobile() {
+        return window.innerWidth <= 868;
+    }
+
     function updateProgressBar(activeIndex) {
-        if (!progressBar) return;
 
         const totalNodes = nodes.length;
+
         if (totalNodes <= 1) {
             progressBar.style.width = '100%';
+            progressBar.style.height = '100%';
             return;
         }
 
-        // Is mobile view (vertical timeline) or desktop (horizontal timeline)
-        const isMobile = window.innerWidth <= 868;
-        const percentage = (activeIndex / (totalNodes - 1)) * 100;
+        const percentage =
+            (activeIndex / (totalNodes - 1)) * 100;
 
-        if (isMobile) {
+        if (isMobile()) {
+
             progressBar.style.width = '100%';
-            progressBar.style.height = `${percentage}%`;
+            progressBar.style.height =
+                `${percentage}%`;
+
         } else {
+
             progressBar.style.height = '100%';
-            progressBar.style.width = `${percentage}%`;
+            progressBar.style.width =
+                `${percentage}%`;
+
         }
+
     }
 
-    // Update Inspector Card Display with smooth fade effect
     function updateInspectorContent(node) {
-        if (!node || !inspectorTitle || !inspectorDesc || !inspectorStep) return;
 
-        const step = node.getAttribute('data-step') || '01';
-        const title = node.getAttribute('data-title') || '';
-        const desc = node.getAttribute('data-desc') || '';
+        if (!node) {
+            return;
+        }
+
+        const step =
+            node.getAttribute('data-step') || '01';
+
+        const title =
+            node.getAttribute('data-title') || '';
+
+        const description =
+            node.getAttribute('data-desc') || '';
 
         if (inspectorCard) {
+
             inspectorCard.style.opacity = '0.4';
-            inspectorCard.style.transform = 'translateY(6px)';
+            inspectorCard.style.transform =
+                'translateY(6px)';
+
         }
 
         setTimeout(() => {
-            inspectorStep.innerText = `STAGE ${step}`;
-            inspectorTitle.innerText = title;
-            inspectorDesc.innerText = desc;
+
+            inspectorStep.textContent =
+                `STAGE ${step}`;
+
+            inspectorTitle.textContent =
+                title;
+
+            inspectorDesc.textContent =
+                description;
 
             if (inspectorCard) {
+
                 inspectorCard.style.opacity = '1';
-                inspectorCard.style.transform = 'translateY(0)';
+                inspectorCard.style.transform =
+                    'translateY(0)';
+
             }
-        }, 150);
+
+        }, 120);
+
     }
 
-    // Handle active node state selection
     function setActiveNode(selectedIndex) {
-        nodes.forEach((node, idx) => {
-            if (idx === selectedIndex) {
-                node.classList.add('active');
-                updateInspectorContent(node);
-            } else {
-                node.classList.remove('active');
-            }
+
+        nodes.forEach((node, index) => {
+
+            node.classList.toggle(
+                'active',
+                index === selectedIndex
+            );
+
         });
 
-        updateProgressBar(selectedIndex);
+        const selectedNode =
+            nodes[selectedIndex];
+
+        updateInspectorContent(
+            selectedNode
+        );
+
+        updateProgressBar(
+            selectedIndex
+        );
+
     }
 
-    // Attach click and hover event listeners to each timeline step
     nodes.forEach((node, index) => {
-        // Click event for permanent selection
+
         node.addEventListener('click', () => {
+
             setActiveNode(index);
+
         });
 
-        // Hover event for quick inspection without losing primary click context
-        node.addEventListener('mouseenter', () => {
-            updateInspectorContent(node);
-        });
+        node.addEventListener(
+            'mouseenter',
+            () => {
 
-        // Reset inspector content to active node when mouse leaves timeline
-        node.addEventListener('mouseleave', () => {
-            const activeNode = document.querySelector('.timeline-node.active');
-            if (activeNode) {
-                updateInspectorContent(activeNode);
+                if (window.innerWidth > 868) {
+                    updateInspectorContent(node);
+                }
+
             }
-        });
+        );
+
+        node.addEventListener(
+            'mouseleave',
+            () => {
+
+                if (window.innerWidth > 868) {
+
+                    const activeNode =
+                        document.querySelector(
+                            '.timeline-node.active'
+                        );
+
+                    if (activeNode) {
+                        updateInspectorContent(
+                            activeNode
+                        );
+                    }
+
+                }
+
+            }
+        );
+
     });
 
-    // Handle window resize to recalculate progress orientation
+    let resizeTimeout;
+
     window.addEventListener('resize', () => {
-        const activeNode = document.querySelector('.timeline-node.active');
-        if (activeNode) {
-            const activeIndex = Array.from(nodes).indexOf(activeNode);
-            updateProgressBar(activeIndex >= 0 ? activeIndex : 0);
-        }
+
+        clearTimeout(resizeTimeout);
+
+        resizeTimeout = setTimeout(() => {
+
+            const activeNode =
+                document.querySelector(
+                    '.timeline-node.active'
+                );
+
+            const activeIndex =
+                Array.from(nodes).indexOf(
+                    activeNode
+                );
+
+            updateProgressBar(
+                activeIndex >= 0
+                    ? activeIndex
+                    : 0
+            );
+
+        }, 100);
+
     });
 
-    // Initialize timeline with Step 01 active
     setActiveNode(0);
-});
+
+}
