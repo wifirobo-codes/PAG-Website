@@ -1,13 +1,11 @@
 @import url('index.css');
 
-/* Main Page Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 3rem 6% 6rem;
 }
 
-/* About Hero Section */
 .about-hero {
     text-align: center;
     max-width: 750px;
@@ -18,7 +16,11 @@
     font-size: 3.2rem;
     font-weight: 800;
     margin: 1rem 0;
-    background: linear-gradient(135deg, #ffffff 30%, var(--accent-gold) 100%);
+    background: linear-gradient(
+        135deg,
+        #ffffff 30%,
+        var(--accent-gold) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -30,7 +32,6 @@
     line-height: 1.7;
 }
 
-/* Timeline Section Layout */
 .timeline-section {
     position: relative;
     margin-top: 2rem;
@@ -57,7 +58,6 @@
     padding: 1rem 0;
 }
 
-/* Glowing Connecting Track */
 .timeline-track {
     position: absolute;
     top: 45px;
@@ -75,13 +75,16 @@
     left: 0;
     height: 100%;
     width: 0%;
-    background: linear-gradient(90deg, var(--emerald-light), var(--accent-gold));
+    background: linear-gradient(
+        90deg,
+        var(--emerald-light),
+        var(--accent-gold)
+    );
     box-shadow: 0 0 12px var(--accent-gold-glow);
     border-radius: 4px;
-    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: width 0.4s ease;
 }
 
-/* Interactive Timeline Node Grid */
 .timeline-nodes {
     display: flex;
     justify-content: space-between;
@@ -98,10 +101,20 @@
     cursor: pointer;
     text-align: center;
     transition: transform 0.3s ease;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font: inherit;
 }
 
 .timeline-node:hover {
     transform: translateY(-5px);
+}
+
+.timeline-node:focus-visible {
+    outline: 2px solid var(--accent-gold);
+    outline-offset: 6px;
+    border-radius: 10px;
 }
 
 .node-circle {
@@ -115,7 +128,7 @@
     justify-content: center;
     margin-bottom: 1.2rem;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.3s ease;
 }
 
 .node-num {
@@ -125,14 +138,13 @@
     transition: color 0.3s ease;
 }
 
-.timeline-node h3 {
+.node-label {
     font-size: 1.05rem;
     font-weight: 600;
     color: var(--sage-text);
     transition: color 0.3s ease;
 }
 
-/* Active Node States */
 .timeline-node.active .node-circle {
     background: var(--emerald-dark);
     border-color: var(--accent-gold);
@@ -144,11 +156,10 @@
     color: var(--accent-gold);
 }
 
-.timeline-node.active h3 {
+.timeline-node.active .node-label {
     color: var(--text-bright);
 }
 
-/* Stage Inspector Display Card */
 .inspector-card {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
@@ -157,7 +168,7 @@
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    transition: all 0.3s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
     position: relative;
     overflow: hidden;
 }
@@ -204,8 +215,8 @@
     font-weight: 300;
 }
 
-/* Responsive Scaling */
 @media (max-width: 868px) {
+
     .about-hero h1 {
         font-size: 2.4rem;
     }
@@ -224,7 +235,11 @@
     .timeline-progress {
         width: 100% !important;
         height: 0%;
-        background: linear-gradient(180deg, var(--emerald-light), var(--accent-gold));
+        background: linear-gradient(
+            180deg,
+            var(--emerald-light),
+            var(--accent-gold)
+        );
     }
 
     .timeline-nodes {
@@ -237,6 +252,7 @@
         width: 100%;
         text-align: left;
         gap: 1.5rem;
+        justify-content: flex-start;
     }
 
     .node-circle {
@@ -259,4 +275,36 @@
     .inspector-header h3 {
         font-size: 1.3rem;
     }
+
+}
+
+@media (max-width: 700px) {
+
+    .container {
+        padding: 2.5rem 5% 4rem;
+    }
+
+    .about-hero {
+        margin-bottom: 3rem;
+    }
+
+    .about-hero p {
+        font-size: 1rem;
+    }
+
+    .section-subtitle {
+        margin-bottom: 2.5rem;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .timeline-node,
+    .node-circle,
+    .timeline-progress,
+    .inspector-card {
+        transition: none;
+    }
+
 }
