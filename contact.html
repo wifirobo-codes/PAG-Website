@@ -9,120 +9,168 @@
 
 <body>
 
-<canvas id="bg-canvas"></canvas>
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
 
 <header class="glass-header">
+
     <a href="index.html" class="brand-logo" aria-label="PAG Home">
+
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round"
+             stroke="currentColor"
+             stroke-width="2"
+             stroke-linecap="round"
+             stroke-linejoin="round"
              aria-hidden="true">
 
             <path class="animated-path"
                   d="M12 2C7.03 2 3 6.03 3 11c0 2.5 1.03 4.76 2.7 6.39L5 22h14l-.7-4.61C19.97 15.76 21 13.5 21 11c0-4.97-4.03-9-9-9z"/>
 
             <path d="M12 11v11"/>
+
         </svg>
 
         <span>PAG</span>
+
     </a>
 
-    <button class="mobile-menu-btn"
-            id="mobile-menu-btn"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
-            aria-controls="main-navigation">
+    <button
+        class="mobile-menu-btn"
+        id="mobile-menu-btn"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="main-navigation">
 
         <span></span>
         <span></span>
         <span></span>
+
     </button>
 
-    <nav class="nav-links" id="main-navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html" class="active">Contact</a>
+    <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About Us
+        </a>
+
+        <a href="contact.html" class="active">
+            Contact
+        </a>
+
     </nav>
+
 </header>
 
 <main class="container">
 
     <section class="contact-hero">
-        <span class="badge">Get In Touch</span>
 
-        <h1>Connect With PAG</h1>
+        <span class="badge">
+            Get In Touch
+        </span>
+
+        <h1>
+            Connect With PAG
+        </h1>
 
         <p>
-            For product inquiries, business opportunities, or any other
+            For product inquiries, business opportunities, or other
             questions, contact the PAG team directly using the details below.
         </p>
+
     </section>
 
     <section class="contact-grid">
 
-        <div class="form-card glass-card">
+        <div class="contact-card">
 
-            <h2>Contact Us</h2>
+            <h2>
+                Contact Us
+            </h2>
 
-            <h3>Mobile</h3>
+            <div class="contact-section">
 
-            <p>
-                <a href="tel:+919898004281">
+                <h3>
+                    Mobile
+                </h3>
+
+                <a
+                    href="tel:+919898004281"
+                    class="contact-link">
                     +91 9898004281
                 </a>
-            </p>
 
-            <p>
-                <a href="tel:+919873333512">
+                <a
+                    href="tel:+919873333512"
+                    class="contact-link">
                     +91 9873333512
                 </a>
-            </p>
 
-            <h3>Address</h3>
+            </div>
 
-            <p>
-                107 Paiki, At. Nesvad,<br>
-                Near Shree Ram Food Industries,<br>
-                Mahuva - 364290,<br>
-                District Bhavnagar, Gujarat, India.
-            </p>
+            <div class="contact-section">
 
-            <a
-                class="map-link"
-                href="https://www.google.com/maps/search/?api=1&query=107+Paiki+At+Nesvad+Mahuva+364290+Bhavnagar+Gujarat"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Open Address in Google Maps
-            </a>
+                <h3>
+                    Address
+                </h3>
+
+                <p class="address">
+                    107 Paiki, At. Nesvad,<br>
+                    Near Shree Ram Food Industries,<br>
+                    Mahuva - 364290,<br>
+                    District Bhavnagar, Gujarat, India.
+                </p>
+
+                <a
+                    class="map-link"
+                    href="https://www.google.com/maps/search/?api=1&query=107+Paiki+At+Nesvad+Mahuva+364290+Bhavnagar+Gujarat"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Open Address in Google Maps
+
+                </a>
+
+            </div>
 
         </div>
 
         <div class="faq-container">
 
-            <h2>Frequently Asked Questions</h2>
+            <h2>
+                Frequently Asked Questions
+            </h2>
 
             <p class="faq-sub">
-                Common questions about PAG and our products.
+                Common questions about PAG and our mushrooms.
             </p>
 
             <div class="accordion">
 
                 <div class="accordion-item">
 
-                    <button class="accordion-header"
-                            aria-expanded="false">
+                    <button
+                        class="accordion-header"
+                        type="button"
+                        aria-expanded="false">
 
-                        <span>About PAG</span>
+                        <span>
+                            About PAG
+                        </span>
 
-                        <svg class="accordion-icon"
-                             width="20"
-                             height="20"
-                             viewBox="0 0 24 24"
-                             fill="none"
-                             stroke="currentColor"
-                             stroke-width="2"
-                             aria-hidden="true">
+                        <svg
+                            class="accordion-icon"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            aria-hidden="true">
 
                             <polyline points="6 9 12 15 18 9"></polyline>
 
@@ -146,21 +194,24 @@
 
                 <div class="accordion-item">
 
-                    <button class="accordion-header"
-                            aria-expanded="false">
+                    <button
+                        class="accordion-header"
+                        type="button"
+                        aria-expanded="false">
 
                         <span>
                             Are button mushrooms vegetarian or non-vegetarian?
                         </span>
 
-                        <svg class="accordion-icon"
-                             width="20"
-                             height="20"
-                             viewBox="0 0 24 24"
-                             fill="none"
-                             stroke="currentColor"
-                             stroke-width="2"
-                             aria-hidden="true">
+                        <svg
+                            class="accordion-icon"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            aria-hidden="true">
 
                             <polyline points="6 9 12 15 18 9"></polyline>
 
@@ -182,21 +233,24 @@
 
                 <div class="accordion-item">
 
-                    <button class="accordion-header"
-                            aria-expanded="false">
+                    <button
+                        class="accordion-header"
+                        type="button"
+                        aria-expanded="false">
 
                         <span>
                             Are PAG mushrooms organic?
                         </span>
 
-                        <svg class="accordion-icon"
-                             width="20"
-                             height="20"
-                             viewBox="0 0 24 24"
-                             fill="none"
-                             stroke="currentColor"
-                             stroke-width="2"
-                             aria-hidden="true">
+                        <svg
+                            class="accordion-icon"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            aria-hidden="true">
 
                             <polyline points="6 9 12 15 18 9"></polyline>
 
@@ -207,9 +261,10 @@
                     <div class="accordion-body">
 
                         <p>
-                            PAG aims to provide fresh and carefully cultivated
-                            mushrooms. Our mushrooms are supplied soon after
-                            harvesting to maintain their freshness and quality.
+                            PAG focuses on providing fresh and carefully
+                            cultivated mushrooms. Our mushrooms are supplied
+                            soon after harvesting to help maintain their
+                            freshness and quality.
                         </p>
 
                     </div>
@@ -218,21 +273,24 @@
 
                 <div class="accordion-item">
 
-                    <button class="accordion-header"
-                            aria-expanded="false">
+                    <button
+                        class="accordion-header"
+                        type="button"
+                        aria-expanded="false">
 
                         <span>
                             Can PAG button mushrooms be relied upon?
                         </span>
 
-                        <svg class="accordion-icon"
-                             width="20"
-                             height="20"
-                             viewBox="0 0 24 24"
-                             fill="none"
-                             stroke="currentColor"
-                             stroke-width="2"
-                             aria-hidden="true">
+                        <svg
+                            class="accordion-icon"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            aria-hidden="true">
 
                             <polyline points="6 9 12 15 18 9"></polyline>
 
@@ -243,8 +301,8 @@
                     <div class="accordion-body">
 
                         <p>
-                            PAG focuses on providing fresh mushrooms with
-                            careful handling and quality control. For product
+                            PAG focuses on careful cultivation and handling
+                            to provide fresh mushrooms. For product
                             availability and specific requirements, please
                             contact us directly.
                         </p>
